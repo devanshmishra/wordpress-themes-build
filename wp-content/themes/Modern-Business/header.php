@@ -16,14 +16,17 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <?php 
                             $args = array(
-                                'menu_class' => 'navbarSupportedContent',
-                                'container'  => 'div',      
-                                'menu' => 'primary-menu'
+                                'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0', // Set the class for the <ul> element
+                                'container'  => '', // No container element needed
+                                'menu'       => 'primary-menu', // Use the menu assigned to the 'primary-menu' location
+                                'fallback_cb' => false, // Don't display a default menu if 'primary-menu' is not assigned
                             );
-                            wp_nav_menu( $args ); 
+                            wp_nav_menu( $args );
+
+
                             ?>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -43,7 +46,7 @@
                                     <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        
                     </div>
                 </div>
             </nav>
